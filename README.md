@@ -1,7 +1,7 @@
-ARDUINO IDE AND LIBRARY INSTALLATION
+## ARDUINO IDE AND LIBRARY INSTALLATION
 For the Arduino Uno CO2, temperature, pressure and humidity meter
 
-STEP 1: DOWNLOAD AND INSTALL ARDUINO IDE
+### STEP 1: DOWNLOAD AND INSTALL ARDUINO IDE
 
 1. Visit the official Arduino software page:
    https://www.arduino.cc/en/software/
@@ -22,7 +22,7 @@ Official installation instructions:
 https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE
 
 
-STEP 2: INSTALL SUPPORT FOR THE ARDUINO UNO
+### STEP 2: INSTALL SUPPORT FOR THE ARDUINO UNO
 
 1. Open Tools > Board > Boards Manager in Arduino IDE.
 
@@ -38,7 +38,7 @@ STEP 2: INSTALL SUPPORT FOR THE ARDUINO UNO
 This is the board selection for the classic Uno R3 (ATmega328P).
 
 
-STEP 3: INSTALL THE REQUIRED LIBRARIES
+### STEP 3: INSTALL THE REQUIRED LIBRARIES
 
 1. Open Tools > Manage Libraries.
 
