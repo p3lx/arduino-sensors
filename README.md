@@ -75,3 +75,23 @@ https://support.arduino.cc/hc/en-us/articles/5145457742236-Install-libraries-in-
 
 Official Adafruit BME280 Arduino setup instructions:
 https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/arduino-test
+
+### STEP 4: WIRING
+
+| MicroSD Card Adapter | Arduino UNO |
+| :------------------: | :---------: |
+| CS                   |         ~10 |
+| SCK                  |          13 |
+| MOSI                 |         ~11 |
+| MISO                 |          12 |
+| VCC                  |          5V |
+| GND                  |         GND |
+
+| BME/BMP280 | Arduino UNO        |
+| :--------: | :----------------: |
+| VIN        |                 5V |
+| GND        |                GND |
+| SCL        | SCL (2 above AREF) |
+| SDA        | SDA (1 above AREF) |        
+
+
