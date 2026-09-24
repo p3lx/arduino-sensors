@@ -9,11 +9,17 @@ For the Arduino Uno CO2, temperature, pressure and humidity meter
 2. Download the latest stable Arduino IDE 2 for your operating system.
 
 3. Install the application:
-   - Windows: open the downloaded .exe file and follow the installer.
-   - macOS: open the downloaded .dmg file and drag Arduino IDE into the
+ - Windows:
+   * Open the downloaded .exe file.
+   * Follow the instruction in the installer.
+ - macOS:
+   * Open the downloaded .dmg file and drag Arduino IDE into the
      Applications folder.
-   - Linux: download the AppImage, open its file properties and enable
-     "Allow executing file as program", then open the AppImage.
+ - Linux:
+   * Download the AppImage.
+   * Open its file properties and enable "Allow executing file as program".
+   * Then open the AppImage.
+   * (There's also an *unofficial* flatpak version of the IDE on flathub. It might work for you.)
 
 4. Launch Arduino IDE. Keep your computer connected to the internet for
    the board package and library installations below.
@@ -44,21 +50,23 @@ This is the board selection for the classic Uno R3 (ATmega328P).
 
 2. Search for and install each of the following libraries:
 
-   Library: Adafruit BME280 Library
-   Author: Adafruit
-   Purpose: Reads temperature, atmospheric pressure and relative humidity.
+ - Library: Adafruit BME280 Library
+    * Author: Adafruit
+    * Purpose: Reads temperature, atmospheric pressure and relative humidity.
 
-   Library: Adafruit Unified Sensor
-   Author: Adafruit
-   Purpose: Dependency used by the BME280 library.
+ - Library: Adafruit Unified Sensor
+    * Author: Adafruit
+    * Purpose: Dependency used by the BME280 library.
+    * (*Dependency of Adafruit BME280 Library*)
 
-   Library: Adafruit BusIO
-   Author: Adafruit
-   Purpose: Communication support used by the sensor library.
+ - Library: Adafruit BusIO
+    * Author: Adafruit
+    * Purpose: Communication support used by the sensor library.
+    * (*Dependency of Adafruit BME280 Library*)
 
-   Library: SD
-   Author: Arduino
-   Purpose: Saves measurements to the SD card.
+ - Library: SD
+    * Author: Arduino
+    * Purpose: Saves measurements to the SD card.
 
 3. If the BME280 installation asks whether to install dependencies,
    choose Install All. Afterwards, check that all four libraries above
@@ -76,7 +84,8 @@ https://support.arduino.cc/hc/en-us/articles/5145457742236-Install-libraries-in-
 Official Adafruit BME280 Arduino setup instructions:
 https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/arduino-test
 
-### STEP 4: WIRING
+## WIRING
+The wiring between the Arduino and the two modules is laid out in these tables.
 
 | MicroSD Card Adapter | Arduino UNO |
 | :------------------: | :---------: |
@@ -94,4 +103,10 @@ https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperat
 | SCL        | SCL (2 above AREF) |
 | SDA        | SDA (1 above AREF) |        
 
+For an example layout with bread board, there's a [diagram](diagram.png).
 
+## Troubleshooting
+ - If you'r on linux and are receiving the error: `OS error: cannot open port /dev/ttyACM0: Permission denied`:
+   * Run `ls -l /dev/ttyACM0` to view which group has the required permission.
+   * Add your user to this group with `sudo usermod -aG dialout "$USER"`. (Were `dialout` is the name of the user group.)
+   * Sign out and back in or reboot.
