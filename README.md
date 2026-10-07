@@ -105,7 +105,20 @@ The wiring between the Arduino and the two modules is laid out in these tables.
 
 For an example layout with bread board, there's a [diagram](diagram.png).
 
-## Troubleshooting
+## RUNNING CODE
+With the Arduino IDE up and running, the Arduino connected, and the required libraries installed:
+ - Clone [this repository](.) to your PC.
+ - First on the top-left of the Arduino IDE, select *File*, in the drop-down menu select *Open...*, then navigate to the included source code from this repository. Inside the [*sd-erase*](./sd-erase) folder, open the [*sd-erase.ino*](./sd-erase/sd-erase.ino) source file.
+ - Upload this source file to the Arduino from the IDE's *Upload* (->) button. It should now start to run.
+ - Once this has erased the SD card, you can start the measurement by uploading [*p-t-rh.ino*](./p-t-rh/p-t-rh.ino) to the Arduino.
+ - Measurements should now show up in the [Serial Monitor tool](https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-serial-monitor/) if you open it. They will also be written to the SD card.
+ - Now that he measuring code is uploaded, you can also unplug the Arduino form your computer and hook it up to a battery / DC power supply and leave it to record measurements to the SD card.
+ - To extract the data from the SD card, you can use the [*sd-extract.ino*](./sd-extract/sd-extract.ino) source file to print the contents of the data file into the serial console.
+ - After running [*sd-extract.ino*](./sd-extract/sd-extract.ino), the measurements (including time-stamps) should end up in the serial console.
+ - You can now copy that data from the console to a separate file on your computer and process it however you like.
+ - You can also open the Arduino IDE's built-in [Serial Plotter Tool](https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-serial-plotter/) to display the data.
+
+## TROUBLESHOOTING
  - If you'r on linux and are receiving the error: `OS error: cannot open port /dev/ttyACM0: Permission denied`:
    * Run `ls -l /dev/ttyACM0` to view which group has the required permission.
    * Add your user to this group with `sudo usermod -aG dialout "$USER"`. (Were `dialout` is the name of the user group.)
