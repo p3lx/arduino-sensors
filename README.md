@@ -123,3 +123,11 @@ With the Arduino IDE up and running, the Arduino connected, and the required lib
    * Run `ls -l /dev/ttyACM0` to view which group has the required permission.
    * Add your user to this group with `sudo usermod -aG dialout "$USER"`. (Were `dialout` is the name of the user group.)
    * Sign out and back in or reboot.
+
+
+## THE EXPERIMENT
+Assuming up to date with the above instructions, the experiment proceeds as follows. 
+ - In the lab Ortsteijn in the Minnaert building, configure the device on a table and run the code. 
+ - After one minute, stop the code from your computer. 
+ - It may be that the power bank cuts off, in that case try again untill it reaches a minute. We assume Adruino device does not draw enough power. 
+ - Read the SD card using the code appended in the GitHub repo.  
